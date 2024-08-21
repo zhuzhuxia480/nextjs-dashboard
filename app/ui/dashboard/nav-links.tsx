@@ -22,7 +22,6 @@ const links = [
 ];
 
 export default function NavLinks() {
-  // TODO don`t see different when pathname === link.href
   const pathname = usePathname();
   console.log("flag:", pathname === links[1].href);
   return (
