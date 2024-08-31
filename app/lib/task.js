@@ -25,6 +25,7 @@ async function Task() {
         });
 
         if (!response.ok) {
+            logger.error(`HTTP error! Status: ${response.status}`);
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
