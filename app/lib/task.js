@@ -11,6 +11,7 @@ const selDoctorScheduleUrl = "https://mcpwxp.motherchildren.com/cloud/appointmen
 
 async function Task() {
     try {
+        logger.info("start to fetch");
         const response = await fetch(reqUrl, {
             method: 'POST',
             headers: {
@@ -41,7 +42,7 @@ function isBetween08() {
     const now = new Date();
     const hours = now.getHours();
     logger.info(hours);
-    return hours > 0 && hours < 8; //TODO
+    return hours > 0 && hours < 8;
 }
 
 function get14DaysAfter() {
