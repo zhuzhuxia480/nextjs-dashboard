@@ -1,5 +1,6 @@
 
 import Task from "../../lib/task";
+import logger from "../../lib/logger";
 
 export async function GET(request) {
     startPolling();
@@ -11,7 +12,9 @@ export async function GET(request) {
 function startPolling() {
     const poll = async () => {
         try {
+            logger.info("start task");
             await Task();
+            logger.info("stop task");
             setTimeout(poll, process.env.REQ_TIME_INTERVAL);
         } catch (error) {
             console.error('Error during polling:', error);
