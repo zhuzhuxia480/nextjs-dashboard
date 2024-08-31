@@ -34,6 +34,7 @@ async function Task() {
         logger.info('Success:', result);
         await dealWithResult(result)
     } catch (error) {
+        logger.error(`HTTP error! : error}`);
         console.error('Error:', error);
     }
 }
